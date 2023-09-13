@@ -50,6 +50,11 @@ public class PlayerDeck : MonoBehaviour
         {
             cardInDeck1.SetActive(false);
         }
+        if(TurnSystem.startTurn == true)
+        {
+           StartCoroutine(Draw(1));
+           TurnSystem.startTurn = false;
+        }
     }
     IEnumerator StartGame()
     {
@@ -69,5 +74,12 @@ public class PlayerDeck : MonoBehaviour
             deck[randomIndex] = container[0];
         }
     }
-
+    IEnumerator Draw(int x)
+    {
+       for(int i = 0; i < x ; i++)
+        {
+            yield return new WaitForSeconds(1);
+            Instantiate(cardToHand, transform.position, transform.rotation);
+        }
+    }
 }

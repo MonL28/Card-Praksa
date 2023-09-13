@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -15,6 +15,8 @@ public class TurnSystem : MonoBehaviour
     public int currentMana;
     public TextMeshProUGUI manaText;
 
+    public static bool startTurn; // turn on / off abillity do draw a card
+
     private void Start()
     {
         isYourTurn = true;
@@ -22,6 +24,8 @@ public class TurnSystem : MonoBehaviour
         isOpponentTurn = 0;
         maxMana = 1;
         currentMana = 1;
+
+        startTurn = false; // da ne izvuče ekstra kartu
     }
 
     private void Update()
@@ -49,6 +53,8 @@ public class TurnSystem : MonoBehaviour
 
         maxMana += 1;
         currentMana = maxMana;
+
+        startTurn = true;
     }
 
 }

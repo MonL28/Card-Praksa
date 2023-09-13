@@ -60,7 +60,7 @@ public class DisplayCard : MonoBehaviour
 
         if(this.tag == "Clone")
         {
-            displayCard[0] = PlayerDeck.staticDeck[numberOfCardInDeck - 2];
+            displayCard[0] = PlayerDeck.staticDeck[numberOfCardInDeck - 1];
             numberOfCardInDeck -= 1;
             PlayerDeck.deckSize -= 1;
             cardBack = false;
@@ -68,6 +68,8 @@ public class DisplayCard : MonoBehaviour
         }
 
         // probaj staviti u for
+        //funkcija koju pozoveš jednom 
+        // stavi u loop
     }  
     
 
